@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Physics Website</title>
+<style>
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* BACKGROUND */
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(to bottom,#061a3a,#0f2e63);
+color:black;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:30px;
+color:white;
+font-size:28px;
+font-weight:bold;
+text-transform:uppercase;
+letter-spacing:2px;
+position:relative;
+}
+
+/* LOGO */
+.logo{
+position:absolute;
+top:15px;
+left:20px;
+width:90px;
+}
+
+/* NAVBAR */
+nav{
+background:#1f3f75;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:0 20px;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+}
+
+nav a:hover{
+color:gold;
+}
+
+/* CONTENT */
+.container{
+background:#e6e6e6;
+width:90%;
+margin:30px auto;
+padding:40px;
+border-radius:5px;
+flex:1;
+line-height:1.8;
+position:relative;
+}
+
+/* IMAGE */
+.topic-img, .home-img{
+display:block;
+margin:0 auto 20px auto;
+width:200px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* VIDEO */
+.topic-video{
+display:block;
+margin:20px auto;
+width:80%;
+max-width:600px;
+height:340px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* CANVA EMBED */
+.canva-slide{
+display:block;
+margin:30px auto;
+width:90%;
+height:500px;
+border:none;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer{
+background:#061a3a;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:auto;
+}
+
+h1{margin-bottom:15px;}
+h2{margin-top:25px;margin-bottom:10px;}
+</style>
+</head>
+
+<body>
+
+<header>
+Physics: The Study of Matter, Energy and Their Interactions
+</header>
+
+<nav>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('about')">About Us</a>
+<a onclick="showPage('kinematics')">Kinematics</a>
+<a onclick="showPage('thermal')">Thermal Energy</a>
+<a onclick="showPage('static')">Static Electricity</a>
+<a onclick="showPage('electromagnetic')">Electromagnetic Induction</a>
+</nav>
+
+<div class="container" id="content"></div>
+
+<footer>
+Created by Carissa, Darrian, Emmanuelle, Zoey
+</footer>
+
+<script>
+/* HOME */
+const homePage = `
+<img src="https://image2url.com/r2/default/images/1772543170905-78a900a5-35a5-44ad-a813-62d28f7c9c23.jpg" class="home-img">
+
+<h1>Welcome!</h1>
+<p>This website explains important Grade 7-9 Physics topics in detail: Kinematics, Thermal Energy, Static Electricity, and Electromagnetic Induction. It is designed to help students understand these topics clearly through easy-to-follow explanations, examples, and diagrams. Whether you are revising for class or exploring physics for the first time, this website provides all the information in one place.<br>Group Members: Carissa, Zoey, Darrian, Nuel</p>
+
+<h2>Electromagnetic Induction Presentation</h2>
+<iframe src="https://www.canva.com/design/DAHC32zYaGY/gI4t5ikngLDQ4aBz5AKdcA/view?embed" 
+style="width:100%; height:520px; border:none;" allowfullscreen></iframe>
+
+<h2>Thermal Energy Canva Presentation</h2>
+<iframe src="https://www.canva.com/design/DAHC3nhsPmw/_TlSapthySVp2smD_qmB-A/view?embed" 
+style="width:100%; height:520px; border:none;" allowfullscreen></iframe>
+
+<h2>Static Electricity Canva Presentation</h2>
+<iframe 
+src="https://www.canva.com/design/DAHC3m1B1io/VlbyzfcJxoVYIP2VPt4teA/view?embed" 
+style="width:100%; height:520px; border:none;" allowfullscreen>
+</iframe>
+`;
+
+/* ABOUT US */
+const aboutPage = `
+<h1>About Us</h1>
+<p>We are a group of students (Carissa, Zoey, Darrian, and Nuel) who created this website to share and explain important physics concepts. Our goal is to present the topics in a simple and clear way so that students can understand the ideas more easily.</p>
+<p>On this website, we explore several physics topics including Kinematics, Thermal Energy, Static Electricity, and Electromagnetic Induction. Each section explains the main concepts, formulas, and examples to help learners understand how these physics principles work and how they appear in real life.</p>
+`;
+
+/* KINEMATICS */
+const kinematicsPage = `
+<h1>Kinematics</h1>
+<p>Distance<br>The total length of the path an object travels</p>
+<p>Displacement<br>The straight line changes in position from the start to the finish, measured in a straight line.</p>
+<p>Speed, Distance, Time<br>Time is how long a motion takes, can be in seconds (s), minutes (m) or hours (h)<br>For example, running for 10 minutes or driving for 2 hours<br><br>Distance is how much ground you covered, can be in meters (m) or kilometers (km)<br>For example, walking 5 meters forward and then 3 meters back.<br><br>Speed is how fast something moves, it can be in meters per second (m/s) or kilometers per hour (km/h)<br>For example, the speed of a car is moving at a speed of 72 km/h</p>
+<p>Formula:<br>https://www.vedantu.com/maths/speed-formula</p>
+<p>S = Speed<br>D = Distance<br>T = Time</p>
+<p>Newton’s laws:<br>First = Any object will stay at rest or in uniform motion unless acted upon (inertia)<br>Second = Acceleration of an object is linked to the force acting on it (a = F / m)<br>Third = Every action has an equal and opposite reaction</p>
+<p>Distance, Time graph<br>The horizontal/x axis is the time<br>The vertical/y axis is the distance</p>
+<p>Graph line<br>Straight Slanted Line: The object is moving at a constant speed<br>Flat Line: Object is not moving at all<br>Curved Line: The object’s speed is changing, either speeding up or slowing down</p>
+<p>Acceleration and Velocity<br>The speed and direction an object is moving is called velocity<br>Making an object speed up or slow down is called acceleration or deceleration<br>V = Velocity<br>Vf = Final velocity<br>Vi = Initial velocity<br>T = Time<br>F = Final<br>V = a * t</p>
+<img src="https://image2url.com/r2/default/images/1772518942684-6a12da3c-2c74-4560-9288-f805b9751f8f.jpg" class="topic-img">
+`;
+
+/* THERMAL ENERGY */
+const thermalPage = `
+<h1>Thermal Energy</h1>
+<p>Thermal energy is the total kinetic energy of particles (atoms/molecules) in a system, depending on mass and speed.<br>
+Heat is the transfer of energy due to a temperature difference, moving from hotter to cooler bodies. Methods: <br>
+Conduction: Transfer through direct contact.<br>
+Convection: Transfer by fluid movement<br>
+Radiation: Transfer by electromagnetic waves
+</p>
+
+<p>Thermal properties:<br>
+Specific heat capacity: Amount of energy needed to change the temperature of a substance (1kg) by 1C<br>
+Latent heat: Amount of energy needed to change the phase of a substance (Melting, Boiling, or evaporation)<br>
+Thermal expansion: The increase in a material’s length, area, or volume, due to rising temperatures.<br>
+Formula: Length change (m) = Initial length (m) × CTE × Temperature change
+</p>
+
+<p>Key factors influencing thermal expansion:<br>
+Different materials expand at different rates. Metals generally have higher expansion coefficients than ceramics or plastics.<br>
+A greater increase in temperature causes greater expansion, while a decrease causes contraction.<br>
+A longer rod or larger volume will experience a greater total change in length or volume compared to a smaller one, assuming the same material<br>
+Higher pressure usually reduces the amount of thermal expansion in liquids.
+</p>
+
+<p>Pressure formula = P1/T1 = P2/T2<br>P = Pressure<br>T = Temperature</p>
+
+<img src="https://www.shutterstock.com/shutterstock/photos/2016916136/display_1500/stock-vector-heat-energy-formula-in-physics-2016916136.jpg" class="topic-img">
+
+<h2>Video Example</h2>
+<iframe class="topic-video" src="https://www.youtube.com/embed/n3boAYB7T3k" allowfullscreen></iframe>
+`;
+
+/* STATIC ELECTRICITY */
+const staticPage = `
+<h1>Static Electricity</h1>
+<p>In the video, it was shown that my friend rubbed a plastic sheet with a piece of cloth and then used the plastic sheet to pull a metallic can toward it. This demonstration illustrates the concept of static electricity. When the plastic sheet was wiped with the cloth, friction caused electrons to transfer from one material to the other, leaving the plastic sheet electrically charged. As a result, the plastic gained a static charge. When the charged plastic sheet was brought near the metallic can, it caused the charges inside the can to rearrange due to electrostatic induction. The side of the can closest to the plastic became oppositely charged, creating an attractive force between the two objects. This force was strong enough to move the can, even though it was initially neutral.</p>
+<img src="https://www.aydemperakende.com.tr/storage/blog/65cb7bc8768dd-why_does_static_electricity_occur.jpg" class="topic-img">
+<h2>Video Example</h2>
+<iframe class="topic-video" src="https://drive.google.com/file/d/1PL5WySkOwzU_wnU2_Ly_-3PvrMhR683T/preview" allowfullscreen></iframe>
+`;
+
+/* ELECTROMAGNETIC INDUCTION */
+const electromagneticPage = `
+<h1>Electro Magnetic Induction</h1>
+<p>Electromagnetic induction is defined as the production of voltage across an electric conductor in a changing magnetic field or when the conductor moves through a stationary magnetic field, resulting in the generation of electric current. This happens because when a conductor is placed in a varying magnetic field, an electromotive force is induced. The currents captured in this phenomena can be captured and used as electricity. This process is called induction because there is no physical connection between the inductor and the magnet.</p>
+
+<p>To induce the voltage you can move a magnet toward or away from the coil or rotate the coil within a magnetic field.</p>
+<p>You can also increase the voltage by increasing the amount of wire or wire turns because it increases the total amount of conductor length cutting through the magnetic field multiplying the effect.</p>
+<p>Converts mechanical energy into electrical energy by rotating a coil in a magnetic field.</p>
+
+<p>Faraday's Law: The induced electromotive force is proportional to the rate of the change of magnetic flux through the coil. This happens because of the conservation of energy and the nature of magnetic force on electrons. A faster change in magnetic flux through a coil creates a stronger magnetic force on electrons.</p>
+
+<p>Faraday's First Law: Whenever there is a change in the magnetic flux passing through the coil of a wire, an electromotive force (emf) is induced in the coil.</p>
+
+<img src="https://www.adda247.com/jobs/wp-content/uploads/sites/2/2023/07/21115134/Faradays-Law.jpg" class="topic-img">
+`;
+
+/* PAGE SWITCH */
+function showPage(page){
+if(page==="home"){ document.getElementById("content").innerHTML = homePage; }
+if(page==="about"){ document.getElementById("content").innerHTML = aboutPage; }
+if(page==="kinematics"){ document.getElementById("content").innerHTML = kinematicsPage; }
+if(page==="thermal"){ document.getElementById("content").innerHTML = thermalPage; }
+if(page==="static"){ document.getElementById("content").innerHTML = staticPage; }
+if(page==="electromagnetic"){ document.getElementById("content").innerHTML = electromagneticPage; }
+}
+
+showPage("home");
+</script>
+</body>
+</html>
